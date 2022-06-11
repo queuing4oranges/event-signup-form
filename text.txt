@@ -1,0 +1,14 @@
+action="book.php" - distinguishes which file is responsible to handle the data after the submit button is hit
+
+isset - checks if a certain value has been set; here if data has been sent to us via the GET method
+
+data that is sent, is stored in the $_GET variable (or others) - so email, name, date is stored in that array
+
+check with isset if $_GET and submit - means if data is sent to the server by the submit btn
+
+---
+how to prevent user from inserting malicious code? - we use specialchars! they convert characters, so they cannot execute
+---
+form validation:
+(server-side validation, using php)
+1. check if the fields are not empty! - one for each for with if
