@@ -1,14 +1,21 @@
-action="book.php" - distinguishes which file is responsible to handle the data after the submit button is hit
-
-isset - checks if a certain value has been set; here if data has been sent to us via the GET method
-
-data that is sent, is stored in the $_GET variable (or others) - so email, name, date is stored in that array
-
-check with isset if $_GET and submit - means if data is sent to the server by the submit btn
-
+-action="book.php" - distinguishes which file is responsible to handle the data after the submit button is hit
+-isset - checks if a certain value has been set; here if data has been sent to us via the GET method
+-data that is sent, is stored in the $_GET variable (or others) - so email, name, date is stored in that array
+-check with isset if $_GET and submit - means if data is sent to the server by the submit btn
 ---
-how to prevent user from inserting malicious code? - we use specialchars! they convert characters, so they cannot execute
+how to prevent user from inserting malicious code:
+-we use specialchars! they convert characters, so they cannot execute
 ---
 form validation:
 (server-side validation, using php)
 1. check if the fields are not empty! - one for each for with if
+2. we check that e.g. sth is actual an email (for example with filter, but php only has filters for certain things; so need to validate ourselves -> regex)
+- instead of echoing after else, we store the value in a variable now - like this: $email = $_POST['email'];
+-after that, we can check with an if statement (here in !negation, bc. otherwise the if would be empty)
+-preg_match - how we are matching something to a regular expression, first argument is the filter, second is the argument that's been checked 
+---
+showing errors:
+-we dont want to echo out errors, but show them in the form itself
+-therefore we need to store the error message in a variable
+- we do that by creating an associative array ($errors) and store the message with their keys ['name'=>'', 'email'=>'', 'event'=>'']
+- values are empty, cause there is no error in the beginning

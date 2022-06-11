@@ -5,32 +5,51 @@
     //     echo $_GET['event'];
     // }
 
+    // if (isset($_POST['submit'])) {
+    //     //check if name is there
+    //     if (empty($_POST['name'])) {
+    //         echo 'How would you like to be called?';
+    //         echo "<br>";
+    //     } else {
+    //         echo htmlspecialchars($_POST['name']); //echo out for confirmation
+    //         echo "<br>";
+    //     }
+
+    $errors = array('name' => '', 'name' => '', 'event' => '');
+
+
     if (isset($_POST['submit'])) {
+
         //check if name is there
         if (empty($_POST['name'])) {
             echo 'How would you like to be called?';
-            echo "<br>";
         } else {
-            echo htmlspecialchars($_POST['name']); //echo out for confirmation
-            echo "<br>";
+            $name = $_POST['name']; //grabs the date from the input
+            if (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
+                $errors['name'] = 'Name must be letters and spaces only.';
+            }
         }
         //check if email is there
         if (empty($_POST['email'])) {
             echo 'Please provide an email!';
-            echo "<br>";
         } else {
-            echo htmlspecialchars($_POST['email']);
-            echo "<br>";
+            $email = $_POST['email'];
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors['email'] = 'Email must be a valid email address.';
+            }
         }
         //check if event is chosen
         if (empty($_POST['event'])) {
-            echo 'Please let us know to which event you would like to come.';
-            echo "<br>";
+            echo 'Please let us know to which event you would like to join.';
+            $event = $_POST['event'];
         } else {
-            echo htmlspecialchars($_POST['event']);
-            echo "<br>";
+            $event = $_POST['event'];
+            if (!preg_match('/^\d+(\.\d+)*$/', $event))
+                $errors['event'] = 'The event can only contain numbers.';
         }
-    } //end of post check
+    }
+    //end of post check
+
 
 
 
