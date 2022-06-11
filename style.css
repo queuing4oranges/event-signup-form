@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *,
@@ -9,7 +10,6 @@ html {
 }
 
 h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: palevioletred;
     display: flex;
     align-self: center;
@@ -23,4 +23,62 @@ h1{
     margin: auto;
 
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+    border: grey solid 3px;
+    border-radius: 25px;
+    padding: 75px;
+}
 
+h4{
+    display: flex;
+    align-self: center;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.red-text{
+    color: rgb(204, 4, 4);
+    font-size: 12px;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 80px 20px;
+}
+
+.developed{
+    padding: 0 10px;
+    font-size: smaller;
+}
+
+.url{
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+label{
+    margin-top: 30px;
+}
+
+.btn{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
