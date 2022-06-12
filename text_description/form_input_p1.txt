@@ -24,5 +24,12 @@ showing input of user when no error occurs:
 ---
 outputting input of user:
 - output the variables inline-php in the input of the html - here in the value field, like this:<input type='text' name='event' value=<?php echo $event ?>>
-- comes out as error message: bc they havent been set yet, which is bc we havent hit submit yet and therefore not executed the code
+- comes out as error message: bc they havent been set yet, which is bc we havent hit submit yet and therefore not executed the code - so we need to initialize the variable on top of the page and set them to an empty string
+---
+next step is redirecting the user to the homepage
+- first check if there are any errors, if so, dont do anything, if no - send back to HP
+- array_filter cycles through the array and performs some kind of callback fct which we can define in the fct; if we dont define, it still cycles through
+- if there are no errors, it will return to false (no error), if true - we do have an error
+- if form is valid, redirect to index (header(...))
 
+ 

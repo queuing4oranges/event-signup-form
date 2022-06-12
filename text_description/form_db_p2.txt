@@ -1,0 +1,7 @@
+- first we're creating a db in phpMyAdmin + two entries
+--- how to connect to db
+- connect through DB::select (require_once DB.php)
+- store in results
+---
+fetch the resulting rows as an array:
+
